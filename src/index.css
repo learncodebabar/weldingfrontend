@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  
+  --secondary-color: #64748b;
+  --secondary-light: #94a3b8;
+  --secondary-dark: #475569;
+  
+  --accent-color: #0ea5e9;
+  --accent-light: #38bdf8;
+  --accent-dark: #0284c7;
+  
+  --white: #ffffff;
+  --off-white: #f8fafc;
+  --light-gray: #f1f5f9;
+  --medium-gray: #e2e8f0;
+  --gray: #cbd5e1;
+  --dark-gray: #64748b;
+  --black: #ffffff;
+  --bg-color: #fafafa;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
+  
+  --success-color: #10b981;
+  --success-light: #d1fae5;
+  --error-color: #ef4444;
+  --error-light: #fee2e2;
+  --warning-color: #f59e0b;
+  --warning-light: #ffedd5;
+  --info-color: #3b82f6;
+  
+  --border-color: #e2e8f0;
+  --border-dark: #cbd5e1;
+  --border-focus: #2563eb;
+  
+  --success-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --warning-gradient: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  --primary-gradient: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+@media (max-width: 767px) {
+  .sideber-container-Mobile{
+    flex-direction: column;
+  }
+}
