@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==================== Main Container ==================== */
+.add-labor-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: var(--font-primary);
+}
+
+.add-labor-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem;
+  background-color: var(--off-white);
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* ==================== Toast Message ==================== */
+.add-labor-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 9999;
+  animation: addLaborSlideIn 0.3s ease;
+  box-shadow: var(--card-shadow-hover);
+}
+
+.add-labor-toast.success {
+  background: var(--success-gradient);
+  color: var(--text-light);
+}
+
+.add-labor-toast.error {
+  background: var(--warning-gradient);
+  color: var(--text-light);
+}
+
+.add-labor-toast-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.add-labor-toast-close {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+  line-height: 1;
+}
+
+.add-labor-toast-close:hover {
+  opacity: 1;
+}
+
+@keyframes addLaborSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ==================== Form Container ==================== */
+.add-labor-form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+/* Dark theme support */
+[data-theme="dark"] .add-labor-form-container {
+  background: var(--secondary-dark);
+  border: 1px solid var(--border-dark);
+}
+
+.add-labor-form-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .add-labor-form-header {
+  border-bottom-color: var(--border-dark);
+}
+
+.add-labor-form-header h2 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .add-labor-form-header h2 {
+  color: var(--text-light);
+}
+
+.add-labor-form-header p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+[data-theme="dark"] .add-labor-form-header p {
+  color: var(--secondary-light);
+}
+
+/* ==================== Form Styles ==================== */
+.add-labor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-labor-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .add-labor-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.add-labor-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-labor-full-width {
+  grid-column: 1 / -1;
+}
+
+.add-labor-form-group label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+[data-theme="dark"] .add-labor-form-group label {
+  color: var(--secondary-light);
+}
+
+.add-labor-form-group input,
+.add-labor-form-group select,
+.add-labor-form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: var(--white);
+  color: var(--text-primary);
+  font-family: inherit;
+  width: 100%;
+}
+
+[data-theme="dark"] .add-labor-form-group input,
+[data-theme="dark"] .add-labor-form-group select,
+[data-theme="dark"] .add-labor-form-group textarea {
+  background: var(--secondary-dark);
+  border-color: var(--border-dark);
+  color: var(--text-light);
+}
+
+.add-labor-form-group input:focus,
+.add-labor-form-group select:focus,
+.add-labor-form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  outline: none;
+}
+
+.add-labor-form-group input.error,
+.add-labor-form-group select.error,
+.add-labor-form-group textarea.error {
+  border-color: var(--error-color);
+}
+
+.add-labor-form-group input.error:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+}
+
+.add-labor-form-group small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.25rem;
+}
+
+[data-theme="dark"] .add-labor-form-group small {
+  color: var(--secondary-light);
+}
+
+.add-labor-error-text {
+  color: var(--error-color) !important;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* ==================== Form Actions ==================== */
+.add-labor-form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .add-labor-form-actions {
+  border-top-color: var(--border-dark);
+}
+
+@media (max-width: 768px) {
+  .add-labor-form-actions {
+    flex-direction: column;
+  }
+}
+
+.add-labor-submit-btn,
+.add-labor-reset-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.add-labor-submit-btn {
+  background: var(--primary-gradient);
+  color: var(--text-light);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.add-labor-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.add-labor-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.add-labor-reset-btn {
+  background: var(--white);
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+}
+
+[data-theme="dark"] .add-labor-reset-btn {
+  background: var(--secondary-dark);
+  color: var(--secondary-light);
+  border-color: var(--border-dark);
+}
+
+.add-labor-reset-btn:hover {
+  background: var(--light-gray);
+  border-color: var(--secondary-light);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .add-labor-reset-btn:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-light);
+}
+
+/* ==================== Spinner Animation ==================== */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==================== Info Box ==================== */
+.add-labor-info-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 12px;
+  border: 1px solid var(--primary-color);
+}
+
+.add-labor-info-box h4 {
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .add-labor-info-box h4 {
+  color: var(--text-light);
+}
+
+.add-labor-info-box p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .add-labor-info-box p {
+  color: var(--secondary-light);
+}
+
+.add-labor-info-box p svg {
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1024px) {
+  .add-labor-content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .add-labor-content {
+    padding: 1rem;
+  }
+  
+  .add-labor-form-container {
+    padding: 1.5rem;
+  }
+
+  .add-labor-form-header h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-labor-form-container {
+    padding: 1rem;
+  }
+
+  .add-labor-form-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .add-labor-form-group input,
+  .add-labor-form-group select,
+  .add-labor-form-group textarea {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.875rem;
+  }
+
+  .add-labor-submit-btn,
+  .add-labor-reset-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .add-labor-toast {
+    left: 10px;
+    right: 10px;
+    min-width: auto;
+  }
+}
+
+/* ==================== Custom Scrollbar ==================== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-gray);
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+  .add-labor-container {
+    background: var(--white);
+  }
+
+  .add-labor-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .add-labor-toast,
+  .add-labor-submit-btn,
+  .add-labor-reset-btn {
+    display: none;
+  }
+
+  .add-labor-form-container {
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+  }
+}

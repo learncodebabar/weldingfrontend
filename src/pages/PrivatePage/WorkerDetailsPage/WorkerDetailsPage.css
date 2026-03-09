@@ -1,0 +1,1315 @@
+
+/* ==================== Main Layout ==================== */
+.worker-details-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.worker-details-page-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem;
+  background-color: var(--off-white);
+  min-height: 100vh;
+}
+
+/* ==================== Header ==================== */
+.worker-details-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.worker-details-page-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.worker-details-page-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.worker-details-page-header h1 svg {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+/* Back Button */
+.worker-details-page-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.worker-details-page-back-btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  transform: translateX(-3px);
+  box-shadow: var(--card-shadow);
+}
+
+/* Payment Button */
+.worker-details-page-payment-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--success-gradient);
+  border: none;
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+}
+
+.worker-details-page-payment-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+}
+
+/* ==================== Profile Card ==================== */
+.worker-details-page-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.worker-details-page-profile-avatar {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-gradient);
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 600;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+  border: 3px solid var(--white);
+}
+
+.worker-details-page-profile-info {
+  flex: 1;
+}
+
+.worker-details-page-profile-info h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.worker-details-page-profile-info p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.worker-details-page-profile-details {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.worker-details-page-profile-details span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  background-color: var(--light-gray);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-profile-details svg {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+.worker-details-page-profile-rate {
+  text-align: right;
+  padding: 1rem 1.5rem;
+  background: var(--primary-gradient);
+  border-radius: 12px;
+  color: var(--white);
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+.worker-details-page-rate-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+}
+
+.worker-details-page-rate-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ==================== Statistics Cards ==================== */
+.worker-details-page-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.worker-details-page-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.worker-details-page-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.worker-details-page-stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.worker-details-page-total .worker-details-page-stat-icon {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.worker-details-page-paid .worker-details-page-stat-icon {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.worker-details-page-remaining-stat .worker-details-page-stat-icon {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.worker-details-page-attendance-stat .worker-details-page-stat-icon {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.worker-details-page-stat-info {
+  flex: 1;
+}
+
+.worker-details-page-stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.worker-details-page-stat-value {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ==================== Payment Progress ==================== */
+.worker-details-page-payment-progress {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+.worker-details-page-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.worker-details-page-progress-bar {
+  height: 8px;
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.worker-details-page-progress-fill {
+  height: 100%;
+  background: var(--success-gradient);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+/* ==================== Month Selector ==================== */
+.worker-details-page-month-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+.worker-details-page-month-selector label {
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.worker-details-page-month-selector select {
+  padding: 0.75rem 2rem 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background-color: var(--white);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px;
+}
+
+.worker-details-page-month-selector select:hover {
+  border-color: var(--primary-color);
+}
+
+.worker-details-page-month-selector select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ==================== Salary Card ==================== */
+.worker-details-page-salary-card {
+  background: linear-gradient(135deg, var(--white) 0%, var(--off-white) 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-salary-card h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.worker-details-page-salary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.worker-details-page-salary-row:last-child {
+  border-bottom: none;
+}
+
+.worker-details-page-salary-row .worker-details-page-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.worker-details-page-salary-row .worker-details-page-label svg {
+  color: var(--primary-color);
+}
+
+.worker-details-page-salary-row .worker-details-page-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.worker-details-page-salary-row.worker-details-page-total {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.worker-details-page-salary-row.worker-details-page-total .worker-details-page-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.worker-details-page-highlight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--success-light);
+  border-radius: 8px;
+  color: var(--success-color);
+}
+
+/* ==================== Payment History ==================== */
+.worker-details-page-payment-history {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-payment-history h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.worker-details-page-payment-history h4 svg {
+  color: var(--primary-color);
+}
+
+.worker-details-page-payment-history ul {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.worker-details-page-payment-history li {
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.worker-details-page-payment-history li:last-child {
+  border-bottom: none;
+}
+
+.worker-details-page-payment-history li:hover {
+  background-color: var(--light-gray);
+}
+
+.worker-details-page-payment-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.worker-details-page-payment-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.worker-details-page-payment-method {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--light-gray);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-payment-amount {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+/* ==================== Attendance List ==================== */
+.worker-details-page-attendance-list {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-attendance-list h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.worker-details-page-attendance-list ul {
+  list-style: none;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.worker-details-page-attendance-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.worker-details-page-attendance-list li:last-child {
+  border-bottom: none;
+}
+
+.worker-details-page-attendance-list li:hover {
+  background-color: var(--light-gray);
+}
+
+.worker-details-page-attendance-list li span:first-child {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.worker-details-page-status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.worker-details-page-status-badge.present {
+  background-color: var(--success-light);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.worker-details-page-status-badge.absent {
+  background-color: var(--error-light);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.worker-details-page-status-badge.holiday {
+  background-color: var(--warning-light);
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+
+/* ==================== Loading State ==================== */
+.worker-details-page-loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1.5rem;
+}
+
+.worker-details-page-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.worker-details-page-loading-state p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* ==================== Error State ==================== */
+.worker-details-page-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-error-state svg {
+  color: var(--error-color);
+  margin-bottom: 1.5rem;
+}
+
+.worker-details-page-error-state h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.worker-details-page-error-state p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.worker-details-page-error-details {
+  font-size: 0.9rem;
+  color: var(--error-color);
+  background-color: var(--error-light);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.worker-details-page-no-data {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 3rem;
+  background-color: var(--light-gray);
+  border-radius: 12px;
+  font-size: 1rem;
+  border: 1px dashed var(--border-color);
+}
+
+/* ==================== Modal Styles with Scrollbar ==================== */
+.worker-details-page-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.worker-details-page-modal-content {
+  background-color: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh; /* Yeh important hai */
+  overflow-y: auto; /* Yeh scrollbar add karta hai */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar for modal */
+.worker-details-page-modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.worker-details-page-modal-content::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 0 12px 12px 0;
+}
+
+.worker-details-page-modal-content::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 4px;
+}
+
+.worker-details-page-modal-content::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-gray);
+}
+
+.worker-details-page-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 12px 12px 0 0;
+  position: sticky; /* Yeh header ko sticky karta hai */
+  top: 0;
+  z-index: 10;
+}
+
+.worker-details-page-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.worker-details-page-modal-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.worker-details-page-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.worker-details-page-modal-body {
+  padding: 2rem;
+}
+
+.worker-details-page-payment-summary {
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--off-white) 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.worker-details-page-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.worker-details-page-summary-item:last-child {
+  border-bottom: none;
+}
+
+.worker-details-page-summary-item .worker-details-page-label {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.worker-details-page-summary-item .worker-details-page-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.worker-details-page-summary-item.worker-details-page-remaining .worker-details-page-value {
+  color: var(--warning-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.worker-details-page-month-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--info-color);
+  color: var(--white);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.worker-details-page-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.worker-details-page-form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.worker-details-page-form-group input,
+.worker-details-page-form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.worker-details-page-form-group input:focus,
+.worker-details-page-form-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.worker-details-page-form-group input:disabled,
+.worker-details-page-form-group select:disabled {
+  background-color: #f1f5f9;
+  cursor: not-allowed;
+}
+
+.worker-details-page-form-group small {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.worker-details-page-modal-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+  border-radius: 0 0 12px 12px;
+  position: sticky; /* Yeh footer ko sticky karta hai */
+  bottom: 0;
+  z-index: 10;
+}
+
+.worker-details-page-cancel-btn,
+.worker-details-page-submit-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.worker-details-page-cancel-btn {
+  background-color: white;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+}
+
+.worker-details-page-cancel-btn:hover:not(:disabled) {
+  background-color: #fee2e2;
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.worker-details-page-submit-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.worker-details-page-submit-btn:hover:not(:disabled) {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2);
+}
+
+.worker-details-page-submit-btn:disabled,
+.worker-details-page-cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1200px) {
+  .worker-details-page-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .worker-details-page-profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .worker-details-page-profile-info {
+    text-align: center;
+  }
+
+  .worker-details-page-profile-details {
+    justify-content: center;
+  }
+
+  .worker-details-page-profile-rate {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .worker-details-page-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .worker-details-page-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .worker-details-page-header-left {
+    width: 100%;
+  }
+
+  .worker-details-page-back-btn,
+  .worker-details-page-payment-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .worker-details-page-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .worker-details-page-month-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .worker-details-page-month-selector select {
+    width: 100%;
+  }
+
+  .worker-details-page-salary-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .worker-details-page-payment-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .worker-details-page-attendance-list li {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .worker-details-page-status-badge {
+    width: 100%;
+    text-align: center;
+  }
+
+  .worker-details-page-modal-footer {
+    flex-direction: column;
+  }
+
+  .worker-details-page-summary-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .worker-details-page-modal-content {
+    max-height: 80vh;
+  }
+}
+
+/* ==================== Custom Scrollbar for Lists ==================== */
+.worker-details-page-payment-history ul::-webkit-scrollbar,
+.worker-details-page-attendance-list ul::-webkit-scrollbar {
+  width: 8px;
+}
+
+.worker-details-page-payment-history ul::-webkit-scrollbar-track,
+.worker-details-page-attendance-list ul::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 10px;
+}
+
+.worker-details-page-payment-history ul::-webkit-scrollbar-thumb,
+.worker-details-page-attendance-list ul::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 10px;
+}
+
+.worker-details-page-payment-history ul::-webkit-scrollbar-thumb:hover,
+.worker-details-page-attendance-list ul::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-gray);
+}/* ==================== Export Buttons ==================== */
+.worker-details-page-export-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.worker-details-page-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.worker-details-page-export-btn.pdf {
+  background-color: #fee2e2;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.worker-details-page-export-btn.pdf:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+.worker-details-page-export-btn.print {
+  background-color: #dbeafe;
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+}
+
+.worker-details-page-export-btn.print:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.worker-details-page-export-btn.csv {
+  background-color: #d1fae5;
+  color: #10b981;
+  border: 1px solid #10b981;
+}
+
+.worker-details-page-export-btn.csv:hover {
+  background-color: #10b981;
+  color: white;
+}
+
+/* ==================== Section Header with Actions ==================== */
+.worker-details-page-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.worker-details-page-section-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.worker-details-page-small-export-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.worker-details-page-small-export-btn.pdf {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.worker-details-page-small-export-btn.pdf:hover {
+  background-color: #ef4444;
+  color: white;
+}
+
+.worker-details-page-small-export-btn.print {
+  background-color: #dbeafe;
+  color: #3b82f6;
+}
+
+.worker-details-page-small-export-btn.print:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.worker-details-page-small-export-btn.csv {
+  background-color: #d1fae5;
+  color: #10b981;
+}
+
+.worker-details-page-small-export-btn.csv:hover {
+  background-color: #10b981;
+  color: white;
+}
+
+/* ==================== Attendance Stats ==================== */
+.worker-details-page-attendance-stats {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+.worker-details-page-attendance-stats h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.worker-details-page-attendance-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.worker-details-page-attendance-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+}
+
+.worker-details-page-attendance-stat-item .label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.worker-details-page-attendance-stat-item .value {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.worker-details-page-attendance-stat-item .value.present {
+  color: var(--success-color);
+}
+
+.worker-details-page-attendance-stat-item .value.halfday {
+  color: var(--warning-color);
+}
+
+.worker-details-page-attendance-stat-item .value.absent {
+  color: var(--error-color);
+}
+
+.worker-details-page-attendance-stat-item .value.leave {
+  color: var(--accent-color);
+}
+
+.worker-details-page-attendance-stat-item .value.overtime {
+  color: var(--info-color);
+}
+
+.worker-details-page-attendance-stat-item .value.total {
+  color: var(--primary-color);
+}
+
+/* ==================== Status Badge for Half Day ==================== */
+.worker-details-page-status-badge.half-day {
+  background-color: var(--warning-light);
+  color: var(--warning-color);
+  border: 1px solid var(--warning-color);
+}
+
+/* ==================== Salary Card - Half Day Row ==================== */
+.worker-details-page-salary-row.half-day-row {
+  background-color: var(--warning-light);
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.worker-details-page-salary-row.half-day-row .worker-details-page-label {
+  color: var(--warning-color);
+}
+
+.worker-details-page-salary-row.half-day-row .worker-details-page-value {
+  color: var(--warning-color);
+  font-weight: 600;
+}
+
+/* ==================== Effective Days Row ==================== */
+.worker-details-page-salary-row.effective-days-row {
+  background-color: var(--primary-light);
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+.worker-details-page-salary-row.effective-days-row .worker-details-page-label {
+  color: var(--primary-color);
+}
+
+.worker-details-page-salary-row.effective-days-row .worker-details-page-value {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* ==================== Mobile Responsive for Export Buttons ==================== */
+@media (max-width: 767px) {
+  .worker-details-page-export-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .worker-details-page-export-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .worker-details-page-section-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .worker-details-page-section-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .worker-details-page-attendance-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .worker-details-page-attendance-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}/* ==================== Toast Message ==================== */
+.worker-details-page-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 9999;
+  animation: slideInRight 0.3s ease;
+  box-shadow: var(--card-shadow-hover);
+}
+
+.worker-details-page-toast.success {
+  background-color: var(--success-light);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.worker-details-page-toast.error {
+  background-color: var(--error-light);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.worker-details-page-toast.info {
+  background-color: var(--info-light);
+  color: var(--info-color);
+  border: 1px solid var(--info-color);
+}
+
+.worker-details-page-toast-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.worker-details-page-toast-content svg {
+  font-size: 1.25rem;
+}
+
+.worker-details-page-toast-close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.worker-details-page-toast-close:hover {
+  opacity: 1;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile responsive for toast */
+@media (max-width: 768px) {
+  .worker-details-page-toast {
+    left: 20px;
+    right: 20px;
+    min-width: auto;
+  }
+}

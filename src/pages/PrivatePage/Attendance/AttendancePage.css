@@ -1,0 +1,812 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==================== Main Container ==================== */
+.attendance-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.attendance-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem;
+  background-color: var(--off-white);
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* ==================== Header ==================== */
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.header-left h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.header-left h1 svg {
+  color: var(--primary-color);
+}
+
+.header-left p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.header-right .date-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.header-right .date-display svg {
+  color: var(--primary-color);
+}
+
+.past-date-badge {
+  padding: 0.2rem 0.6rem;
+  background-color: var(--warning-light);
+  color: var(--warning-color);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+/* ==================== Messages ==================== */
+.success-message,
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  animation: slideIn 0.3s ease;
+}
+
+.success-message {
+  background-color: var(--success-light);
+  color: var(--success-color);
+  border: 1px solid var(--success-color);
+}
+
+.error-message {
+  background-color: var(--error-light);
+  color: var(--error-color);
+  border: 1px solid var(--error-color);
+}
+
+.success-message button,
+.error-message button {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.success-message button:hover,
+.error-message button:hover {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ==================== Controls ==================== */
+.attendance-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.date-picker,
+.search-box,
+.filter-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--off-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.date-picker svg,
+.search-box svg,
+.filter-dropdown svg {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.date-picker input,
+.search-box input,
+.filter-dropdown select {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.date-picker input:disabled,
+.search-box input:disabled,
+.filter-dropdown select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.refresh-btn,
+.submit-all-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.refresh-btn {
+  background-color: var(--white);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.refresh-btn:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+.refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.submit-all-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.submit-all-btn:hover:not(:disabled) {
+  background-color: var(--primary-dark);
+}
+
+.submit-all-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==================== Summary Cards ==================== */
+.attendance-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.summary-card {
+  padding: 1.25rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: box-shadow 0.2s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.summary-card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.summary-card .summary-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.summary-card .summary-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.summary-card.total {
+  border-left: 4px solid var(--primary-color);
+}
+.summary-card.present {
+  border-left: 4px solid var(--success-color);
+}
+.summary-card.absent {
+  border-left: 4px solid var(--error-color);
+}
+.summary-card.leave {
+  border-left: 4px solid var(--warning-color);
+}
+.summary-card.halfday {
+  border-left: 4px solid var(--accent-color);
+}
+.summary-card.overtime {
+  border-left: 4px solid var(--info-color);
+}
+
+/* ==================== Pending Save Indicator ==================== */
+.pending-save-indicator {
+  padding: 0.75rem 1rem;
+  background-color: var(--warning-light);
+  color: var(--warning-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ==================== Loading State ==================== */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1.5rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ==================== Attendance Table ==================== */
+.attendance-table-wrapper {
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: auto;
+  box-shadow: var(--card-shadow);
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.attendance-table thead {
+  background-color: var(--light-gray);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.attendance-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.attendance-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.attendance-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.attendance-table tbody tr:hover {
+  background-color: var(--off-white);
+}
+
+.attendance-table tbody tr.saved-row {
+  background-color: var(--success-light);
+  opacity: 0.8;
+}
+
+/* Worker Cell */
+.worker-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.worker-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-light);
+  color: var(--white);
+  font-weight: 600;
+  border-radius: 50%;
+  font-size: 1.1rem;
+}
+
+.worker-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.worker-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.worker-father,
+.worker-cnic {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Contact Cell */
+.contact-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.contact-cell small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Rate Badge */
+.rate-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--primary-light);
+  color: var(--white);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Attendance Actions */
+.attendance-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.status-select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.status-select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Status badge classes */
+.status-select.present {
+  background-color: var(--success-light);
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+.status-select.absent {
+  background-color: var(--error-light);
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+.status-select.leave {
+  background-color: var(--warning-light);
+  border-color: var(--warning-color);
+  color: var(--warning-color);
+}
+.status-select.half-day {
+  background-color: var(--accent-light);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.status-select.overtime {
+  background-color: var(--info-light, #dbeafe);
+  border-color: var(--info-color);
+  color: var(--info-color);
+}
+
+.saved-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--success-color);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* No Data */
+.no-data {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+
+.no-data svg {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.no-data p {
+  margin-bottom: 1rem;
+}
+
+.no-data button {
+  padding: 0.5rem 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.no-data button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+/* ==================== Mobile View ==================== */
+.mobile-view {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.worker-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+
+.worker-card.present {
+  border-left: 4px solid var(--success-color);
+}
+.worker-card.absent {
+  border-left: 4px solid var(--error-color);
+}
+.worker-card.leave {
+  border-left: 4px solid var(--warning-color);
+}
+.worker-card.half-day {
+  border-left: 4px solid var(--accent-color);
+}
+.worker-card.overtime {
+  border-left: 4px solid var(--info-color);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-header .worker-avatar {
+  width: 40px;
+  height: 40px;
+  font-size: 1.1rem;
+}
+
+.card-header .worker-info h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.card-header .worker-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.card-body {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.info-row .rate {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mobile-status-select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.saved-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--success-color);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 0.9rem;
+}
+
+.no-data-card {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.no-data-card svg {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 1024px) {
+  .attendance-content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .attendance-controls {
+    flex-direction: column;
+  }
+
+  .date-picker,
+  .search-box,
+  .filter-dropdown,
+  .refresh-btn,
+  .submit-all-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .attendance-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-right {
+    width: 100%;
+  }
+
+  .header-right .date-display {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .attendance-table-wrapper {
+    display: none;
+  }
+
+  .mobile-view {
+    display: flex;
+  }
+
+  .attendance-summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .attendance-content {
+    padding: 1rem;
+  }
+
+  .attendance-summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card .summary-value {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+  .attendance-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .attendance-controls,
+  .refresh-btn,
+  .submit-all-btn,
+  .pending-save-indicator {
+    display: none;
+  }
+
+  .attendance-table {
+    border: 1px solid #ddd;
+  }
+
+  .attendance-table th {
+    background-color: #f5f5f5;
+  }
+}/* ==================== EDIT BUTTON STYLES ==================== */
+
+/* Main Edit Button */
+.edit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--white);
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+/* Hover Effect */
+.edit-btn:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+/* Active/Click Effect */
+.edit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Disabled State */
+.edit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ==================== SAVE SINGLE BUTTON STYLES ==================== */
+
+.save-single-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--success-color);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.save-single-btn:hover:not(:disabled) {
+  background-color: #059669; /* success-dark */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.save-single-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.2);
+}
+
+.save-single-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+

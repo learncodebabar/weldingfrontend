@@ -1,0 +1,148 @@
+/* ThemeContext.js या global.css में ये ऐड करें */
+
+/* [data-theme="dark"] {
+  --bg-color: #0f172a;
+  --white: #ffffff;
+  --off-white: #111827;
+  --light-gray: #1f2937;
+  --medium-gray: #334155;
+  --gray: #ffffff;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --primary-color: #3b82f6;
+  --primary-light: #60a5fa;
+  --primary-dark: #2563eb;
+  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --secondary-dark: #ebecee;
+   --black: #0f172a;
+
+} */
+
+[data-theme="green"] {
+  --primary-color: #16a34a;
+  --primary-light: #22c55e;
+  --primary-dark: #15803d;
+  --primary-gradient: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+}
+
+[data-theme="yellow"] {
+  --primary-color: #eab308;
+  --primary-light: #facc15;
+  --primary-dark: #ca8a04;
+  --primary-gradient: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+}
+
+[data-theme="purple"] {
+  --primary-color: #7c3aed;
+  --primary-light: #a855f7;
+  --primary-dark: #6d28d9;
+  --primary-gradient: linear-gradient(135deg, #a855f7 0%, #6d28d9 100%);
+}
+
+[data-theme="red"] {
+  --primary-color: #dc2626;
+  --primary-light: #ef4444;
+  --primary-dark: #b91c1c;
+  --primary-gradient: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+}
+
+[data-theme="orange"] {
+  --primary-color: #ea580c;
+  --primary-light: #f97316;
+  --primary-dark: #c2410c;
+  --primary-gradient: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+}
+
+[data-theme="teal"] {
+  --primary-color: #0d9488;
+  --primary-light: #14b8a6;
+  --primary-dark: #0f766e;
+  --primary-gradient: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
+}
+
+[data-theme="pink"] {
+  --primary-color: #db2777;
+  --primary-light: #ec4899;
+  --primary-dark: #be185d;
+  --primary-gradient: linear-gradient(135deg, #ec4899 0%, #be185d 100%);
+}
+
+[data-theme="indigo"] {
+  --primary-color: #4f46e5;
+  --primary-light: #6366f1;
+  --primary-dark: #4338ca;
+  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+}
+
+/* नई 10 थीम - Most Important & Popular */
+[data-theme="blue"] {
+  --primary-color: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+[data-theme="sky"] {
+  --primary-color: #0284c7;
+  --primary-light: #0ea5e9;
+  --primary-dark: #0369a1;
+  --primary-gradient: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+}
+
+[data-theme="cyan"] {
+  --primary-color: #0891b2;
+  --primary-light: #06b6d4;
+  --primary-dark: #0e7490;
+  --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+}
+
+[data-theme="lime"] {
+  --primary-color: #65a30d;
+  --primary-light: #84cc16;
+  --primary-dark: #4d7c0f;
+  --primary-gradient: linear-gradient(135deg, #84cc16 0%, #65a30d 100%);
+}
+
+[data-theme="amber"] {
+  --primary-color: #d97706;
+  --primary-light: #f59e0b;
+  --primary-dark: #b45309;
+  --primary-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+[data-theme="emerald"] {
+  --primary-color: #059669;
+  --primary-light: #10b981;
+  --primary-dark: #047857;
+  --primary-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+[data-theme="violet"] {
+  --primary-color: #7c3aed;
+  --primary-light: #8b5cf6;
+  --primary-dark: #6d28d9;
+  --primary-gradient: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+[data-theme="fuchsia"] {
+  --primary-color: #c026d3;
+  --primary-light: #d946ef;
+  --primary-dark: #a21caf;
+  --primary-gradient: linear-gradient(135deg, #d946ef 0%, #c026d3 100%);
+}
+
+[data-theme="rose"] {
+  --primary-color: #e11d48;
+  --primary-light: #f43f5e;
+  --primary-dark: #be123c;
+  --primary-gradient: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+}
+
+[data-theme="slate"] {
+  --primary-color: #475569;
+  --primary-light: #64748b;
+  --primary-dark: #334155;
+  --primary-gradient: linear-gradient(135deg, #64748b 0%, #475569 100%);
+}

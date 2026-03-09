@@ -1,0 +1,637 @@
+
+
+/* ==================== Main Container ==================== */
+.admin-account-settings-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+.admin-account-settings-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem;
+  background-color: var(--off-white);
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* ==================== Header Section ==================== */
+.admin-account-settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 1.5rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.admin-account-settings-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-account-settings-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-account-settings-back-btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  box-shadow: var(--card-shadow);
+}
+
+.admin-account-settings-header h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.admin-account-settings-logout-btn {
+  padding: 0.6rem 1.5rem;
+  background-color: var(--white);
+  color: var(--error-color);
+  border: 1px solid var(--error-light);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-account-settings-logout-btn:hover {
+  background-color: var(--error-color);
+  color: var(--white);
+  border-color: var(--error-color);
+}
+
+/* ==================== Alert Messages ==================== */
+.admin-account-settings-alert {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.admin-account-settings-alert-success {
+  background-color: var(--success-light);
+  color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.admin-account-settings-alert-error {
+  background-color: var(--error-light);
+  color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.admin-account-settings-alert-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.admin-account-settings-alert-close:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ==================== Profile Card ==================== */
+.admin-account-settings-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.2s ease;
+}
+
+.admin-account-settings-profile-card:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.admin-account-settings-profile-avatar {
+  font-size: 4rem;
+  color: var(--white);
+  background-color: var(--primary-light);
+  border-radius: 50%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--white);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.admin-account-settings-profile-info {
+  flex: 1;
+}
+
+.admin-account-settings-profile-info h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.admin-account-settings-profile-email {
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.admin-account-settings-profile-role {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.85rem;
+  background-color: var(--primary-light);
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--primary-color);
+}
+
+.admin-account-settings-profile-meta {
+  text-align: right;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  background-color: var(--light-gray);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+}
+
+.admin-account-settings-profile-meta p {
+  margin: 0.25rem 0;
+}
+
+/* ==================== Settings Sections ==================== */
+.admin-account-settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-account-settings-section {
+  background-color: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.2s ease;
+  box-shadow: var(--card-shadow);
+}
+
+.admin-account-settings-section:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.admin-account-settings-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-account-settings-section-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.admin-account-settings-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-account-settings-edit-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+.admin-account-settings-edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.admin-account-settings-save-btn,
+.admin-account-settings-cancel-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-account-settings-save-btn {
+  background-color: var(--success-color);
+  color: var(--white);
+}
+
+.admin-account-settings-save-btn:hover:not(:disabled) {
+  background-color: var(--success-dark, #059669);
+}
+
+.admin-account-settings-cancel-btn {
+  background-color: var(--white);
+  color: var(--error-color);
+  border: 1px solid var(--error-light);
+}
+
+.admin-account-settings-cancel-btn:hover:not(:disabled) {
+  background-color: var(--error-light);
+}
+
+.admin-account-settings-save-btn:disabled,
+.admin-account-settings-cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-account-settings-section-content {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  padding: 0.5rem 0;
+}
+
+.admin-account-settings-section-content p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.admin-account-settings-password-placeholder {
+  font-family: monospace;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  background-color: var(--light-gray);
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.admin-account-settings-edit-mode {
+  margin-top: 1rem;
+}
+
+.admin-account-settings-edit-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: var(--white);
+}
+
+.admin-account-settings-edit-input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.admin-account-settings-edit-input:disabled {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}
+
+/* ==================== Password Edit Section ==================== */
+.admin-account-settings-password-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.admin-account-settings-password-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-account-settings-password-field label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.admin-account-settings-password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.admin-account-settings-password-input-wrapper input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-right: 3rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background-color: var(--white);
+}
+
+.admin-account-settings-password-input-wrapper input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.admin-account-settings-password-input-wrapper input:disabled {
+  background-color: var(--light-gray);
+  cursor: not-allowed;
+}
+
+.admin-account-settings-password-toggle {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.admin-account-settings-password-toggle:hover {
+  color: var(--primary-color);
+  background-color: var(--light-gray);
+}
+
+/* ==================== Account Info Section ==================== */
+.admin-account-settings-info-section {
+  background-color: var(--light-gray);
+}
+
+.admin-account-settings-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.admin-account-settings-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.2s ease;
+}
+
+.admin-account-settings-info-item:hover {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.admin-account-settings-info-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+
+.admin-account-settings-info-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* ==================== Loading State ==================== */
+.admin-account-settings-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+  background-color: var(--bg-color);
+}
+
+.admin-account-settings-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.admin-account-settings-loading p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ==================== Responsive Design ==================== */
+@media (max-width: 1024px) {
+  .admin-account-settings-content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  .admin-account-settings-profile-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .admin-account-settings-profile-info {
+    text-align: center;
+  }
+
+  .admin-account-settings-profile-meta {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-account-settings-content {
+    padding: 1rem;
+  }
+
+  .admin-account-settings-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .admin-account-settings-header-left {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .admin-account-settings-back-btn {
+    width: auto;
+  }
+
+  .admin-account-settings-logout-btn {
+    width: 100%;
+  }
+
+  .admin-account-settings-section-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .admin-account-settings-edit-actions {
+    width: 100%;
+  }
+
+  .admin-account-settings-save-btn,
+  .admin-account-settings-cancel-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .admin-account-settings-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-account-settings-profile-avatar {
+    font-size: 3.5rem;
+  }
+
+  .admin-account-settings-profile-info h2 {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-account-settings-content {
+    padding: 0.75rem;
+  }
+
+  .admin-account-settings-profile-card {
+    padding: 1.25rem;
+  }
+
+  .admin-account-settings-section {
+    padding: 1.25rem;
+  }
+
+  .admin-account-settings-edit-input {
+    font-size: 0.95rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .admin-account-settings-password-field label {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==================== Custom Scrollbar ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--dark-gray);
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+  .admin-account-settings-container {
+    background: white;
+  }
+
+  .admin-account-settings-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  .admin-account-settings-back-btn,
+  .admin-account-settings-logout-btn,
+  .admin-account-settings-edit-btn,
+  .admin-account-settings-edit-actions,
+  .admin-account-settings-alert-close {
+    display: none;
+  }
+
+  .admin-account-settings-profile-card,
+  .admin-account-settings-section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+}
